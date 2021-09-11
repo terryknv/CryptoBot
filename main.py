@@ -15,4 +15,4 @@ async def ping(ctx):
 
 #client.load_extension(f'cogs.rep')
 
-client.run(DISCORD_TOKEN)
+client.run(${{ secrets.DISCORD_TOKEN }})
