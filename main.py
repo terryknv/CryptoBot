@@ -13,6 +13,6 @@ async def ping(ctx):
     msg = await ctx.send("Pinging...")
     await msg.edit(content=f"Ping! `{round(client.latency * 1000)}ms`")
 
-client.load_extension(f'cogs.rep')
+#client.load_extension(f'cogs.rep')
 
 client.run(DISCORD_TOKEN)
