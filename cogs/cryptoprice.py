@@ -6,7 +6,6 @@ class crypto(commands.Cog):
     def __init__(self, client):
         self.client = client
 
-
     @commands.command(aliases=["bitcoin"])
     async def btc(self, ctx):
 
@@ -18,7 +17,7 @@ class crypto(commands.Cog):
         eur = r["EUR"]
         gbp = r["GBP"]
         em = discord.Embed(
-            colour=0xf7931a
+            colour=0xf7931a,
             description=f"USD: `${str(round(usd))}`\n\nEUR: `€{str(round(eur))}`\n\nGBP: `£{str(round(gbp))}`"
         )
         em.set_author(
@@ -38,7 +37,7 @@ class crypto(commands.Cog):
         eur = r["EUR"]
         gbp = r["GBP"]
         em = discord.Embed(
-            colour=0x716b94
+            colour=0x716b94,
             description=f"USD: `${str(round(usd))}`\n\nEUR: `€{str(round(eur))}`\n\nGBP: `£{str(round(gbp))}`"
         )
         em.set_author(
