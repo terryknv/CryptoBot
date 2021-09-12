@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import requests
 
-class cryptoPrice(commands.Cog):
+class CryptoPrice(commands.Cog):
     def __init__(self, client):
         self.client = client
 
@@ -113,4 +113,4 @@ class cryptoPrice(commands.Cog):
 
         
 def setup(bot):
-    bot.add_cog(cryptoPrice(bot))
+    bot.add_cog(CryptoPrice(bot))
