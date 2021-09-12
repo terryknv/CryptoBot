@@ -33,6 +33,8 @@ class cryptoPrice(commands.Cog):
             name="Bitcoin",
             icon_url="https://cdn.pixabay.com/photo/2013/12/08/12/12/bitcoin-225079_960_720.png",
         )
+        em.set_footer(text="Prices from Cryptocompare.com")
+
         await ctx.send(embed=em)
 
     @commands.command(aliases=["ethereum"])
@@ -61,6 +63,8 @@ class cryptoPrice(commands.Cog):
             name="Ethereum",
             icon_url="https://cdn.discordapp.com/attachments/271256875205525504/374282740218200064/2000px-Ethereum_logo.png",
         )
+        em.set_footer(text="Prices from Cryptocompare.com")
+
         await ctx.send(embed=em)
 
     @commands.command(aliases=["litecoin"])
@@ -82,6 +86,8 @@ class cryptoPrice(commands.Cog):
             name="Litecoin",
             icon_url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Litecoin.svg/2500px-Litecoin.svg.png",
         )
+        em.set_footer(text="Prices from Cryptocompare.com")
+
         await ctx.send(embed=em)
 
     @commands.command(aliases=["crypto"])
@@ -102,6 +108,7 @@ class cryptoPrice(commands.Cog):
         em.set_author(
             name=f"Price of {crypto.upper()}",
         )
+        em.set_footer(text="Prices from Cryptocompare.com")
         await ctx.send(embed=em)
 
         
