@@ -4,7 +4,6 @@ from cryptography.fernet import Fernet
 import time
 
 client = commands.Bot(command_prefix = ">")
-client.remove_command("help")
 
 def load_key():
     file = open("key.key", "rb")
