@@ -100,8 +100,8 @@ class cryptoPrice(commands.Cog):
             description=f"USD: `${round(usd)}`\n\nEUR: `€{round(eur)}`\n\nGBP: `£{round(gbp)}`"
         )
         em.set_author(
-            name=f"Price of {crypto}",
-            icon_url="https://img.favpng.com/16/23/24/bitcoin-cash-cryptocurrency-logo-png-favpng-4PTyjd0fdRP22ddTr64P7aeqM.jpg",
+            name=f"Price of {crypto.upper()}",
+            icon_url="https://cdn.pixabay.com/photo/2013/12/08/12/12/bitcoin-225079_960_720.png",
         )
         await ctx.send(embed=em)
 
