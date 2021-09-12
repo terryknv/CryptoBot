@@ -2,7 +2,7 @@ import discord
 from discord.ext import commands
 import requests
 
-class cryptoConvert(commands.Cog):
+class CryptoConvert(commands.Cog):
     def __init__(self, client):
         self.client = client
 
@@ -29,4 +29,4 @@ class cryptoConvert(commands.Cog):
 
         
 def setup(bot):
-    bot.add_cog(cryptoConvert(bot))
+    bot.add_cog(CryptoConvert(bot))
