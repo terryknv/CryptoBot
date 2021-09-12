@@ -12,3 +12,8 @@ class CurrencySymbols:
         }
 
 #CurrencySymbols.curr_list['USD']
+    def is_valid_curr(currency):
+        if currency in curr_list:
+            return True
+        else:
+            return False
