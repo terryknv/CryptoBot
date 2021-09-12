@@ -63,5 +63,27 @@ class cryptoPrice(commands.Cog):
         )
         await ctx.send(embed=em)
 
+    @commands.command(aliases=["litecoin"])
+    async def ltc(self, ctx):
+      
+        r = requests.get(
+            "https://min-api.cryptocompare.com/data/price?fsym=LTC&tsyms=USD,EUR,GBP"
+        )
+        r = r.json()
+        usd = r["USD"]
+        eur = r["EUR"]
+        gbp = r["GBP"]
+                
+        em = discord.Embed(
+            colour=0xbebebe,
+            description=f"USD: `${round(usd)}`\n\nEUR: `€{round(eur)}`\n\nGBP: `£{round(gbp)}`"
+        )
+        em.set_author(
+            name="Litecoin",
+            icon_url="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Litecoin.svg/2500px-Litecoin.svg.png",
+        )
+        await ctx.send(embed=em)
+
+        
 def setup(bot):
     bot.add_cog(cryptoPrice(bot))
