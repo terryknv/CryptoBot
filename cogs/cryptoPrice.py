@@ -17,6 +17,7 @@ class cryptoPrice(commands.Cog):
         eur = r["EUR"]
         gbp = r["GBP"]
         
+        #asigning 5 strings to each digit in the price of btc so I can add a comma between the 2nd and 3rd digit
         usd_rounded = str(round(usd))
         one,two,three,four,five=usd_rounded
         eur_rounded = str(round(eur))
@@ -44,9 +45,17 @@ class cryptoPrice(commands.Cog):
         usd = r["USD"]
         eur = r["EUR"]
         gbp = r["GBP"]
+        
+        usd_rounded = str(round(usd))
+        one,two,three,four=usd_rounded
+        eur_rounded = str(round(eur))
+        one1,two1,three1,four1=eur_rounded
+        gbp_rounded = str(round(gbp))
+        one2,two2,three2,four2=gbp_rounded
+        
         em = discord.Embed(
             colour=0x716b94,
-            description=f"USD: `${str(round(usd))}`\n\nEUR: `€{str(round(eur))}`\n\nGBP: `£{str(round(gbp))}`"
+            description=f"USD: `${one}{two},{three}{four}`\n\nEUR: `€{one1}{two1},{three1}{four1}`\n\nGBP: `£{one2}{two2},{three2}{four2}`"
         )
         em.set_author(
             name="Ethereum",
