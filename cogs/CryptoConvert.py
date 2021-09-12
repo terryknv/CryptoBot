@@ -24,7 +24,7 @@ class CryptoConvert(commands.Cog):
         is_valid = CurrencySymbols.is_valid_curr(currency)
         joiner = ', '
         valid_curr = list(CurrencySymbols.keys())
-        list = joiner.join(valid_curr)
+        ls = joiner.join(valid_curr)
         
         if is_valid == False:
             await ctx.send(f"Please convert from a currency from the valid list: {list}")
