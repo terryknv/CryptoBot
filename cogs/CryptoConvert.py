@@ -11,25 +11,27 @@ class CryptoConvert(commands.Cog):
     @commands.command()
     async def convert(self, ctx, amount, currency, crypto):
 
+        is_valid = CurrencySymbols.is_valid_curr(currency.upper())
+        
+        if is_valid == False:
+            await ctx.send(f"Please convert from a currency from the valid list: {ls}")
+            return
+
         r = requests.get(
             f"https://min-api.cryptocompare.com/data/price?fsym={crypto.upper()}&tsyms={currency.upper()}"
         )
-
+        
         r = r.json()
         usd = r[currency.upper()]
         index = 1 / usd
         amounts = int(amount)
         converted = amounts * index
         
-        is_valid = CurrencySymbols.is_valid_curr(currency.upper())
         joiner = ', '
         valid_curr = list(CurrencySymbols.curr_list.keys())
         ls = joiner.join(valid_curr)
         curr_symbol = CurrencySymbols.curr_list[currency.upper()]
         
-        if is_valid == False:
-            await ctx.send(f"Please convert from a currency from the valid list: {ls}")
-            return
         
         em = discord.Embed(colour = 0xf7931a, description=f"{curr_symbol}{amount} = {round(converted,10)} BTC")
         em.set_footer(text="Prices from Cryptocompare.com")
