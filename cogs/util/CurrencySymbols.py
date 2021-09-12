@@ -1,5 +1,5 @@
 class CurrencySymbols:
-    curr_list: {
+    curr_list = {
         'USD': '$',
         'EUR': '€',
         'GBP': '£',
