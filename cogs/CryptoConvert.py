@@ -21,7 +21,7 @@ class CryptoConvert(commands.Cog):
         amounts = int(amount)
         converted = amounts * index
         
-        is_valid = CurrencySymbols.is_valid_curr(currency)
+        is_valid = CurrencySymbols.is_valid_curr(currency.upper())
         joiner = ', '
         valid_curr = list(CurrencySymbols.curr_list.keys())
         ls = joiner.join(valid_curr)
