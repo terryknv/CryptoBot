@@ -23,7 +23,7 @@ class CryptoConvert(commands.Cog):
         
         is_valid = CurrencySymbols.is_valid_curr(currency)
         joiner = ', '
-        valid_curr = list(CurrencySymbols.keys())
+        valid_curr = list(CurrencySymbols.curr_list.keys())
         ls = joiner.join(valid_curr)
         
         if is_valid == False:
