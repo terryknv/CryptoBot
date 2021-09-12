@@ -15,7 +15,7 @@ class CurrencySymbols:
 
     @staticmethod
     def is_valid_curr(currency):
-        if currency in curr_list:
+        if currency in self.curr_list:
             return True
         else:
             return False
