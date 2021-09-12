@@ -20,6 +20,16 @@ class CryptoConvert(commands.Cog):
         index = 1 / usd
         amounts = int(amount)
         converted = amounts * index
+        
+        is_valid = is_valid_curr(currency)
+        joiner = ', '
+        valid_curr = list(CurrencySymbols.keys())
+        list = joiner.join(valid_curr)
+        
+        if is_valid == False:
+            await ctx.send(f"Please convert from a currency from the valid list: {list}")
+            return
+        
         em = discord.Embed(colour = 0xf7931a, description=f"${amount} = {round(converted,10)} BTC")
         em.set_footer(text="Prices from Cryptocompare.com")
         em.set_author(
