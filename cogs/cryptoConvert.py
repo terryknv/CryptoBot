@@ -20,7 +20,7 @@ class cryptoConvert(commands.Cog):
         amounts = int(amount)
         converted = amounts * index
         em = discord.Embed(colour = 0xf7931a, description=f"${amount} = {round(converted,10)} BTC")
-        em.set_footer(text="Prices from Blockchain.com")
+        em.set_footer(text="Prices from Cryptocompare.com")
         em.set_author(
             name="Currency Conversion",
             icon_url="https://cdn.pixabay.com/photo/2013/12/08/12/12/bitcoin-225079_960_720.png",
