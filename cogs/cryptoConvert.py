@@ -7,21 +7,25 @@ class Help(commands.Cog):
         self.client = client
 
         
-    @commands.command(aliases=["usdtobtc", "usd2btc"])
-    async def usdbtc(self, ctx, message):
+    @commands.command()
+    async def convert(self, ctx, amount, currency, crypto):
 
         r = requests.get(
-            "https://min-api.cryptocompare.com/data/price?fsym=BTC&tsyms=USD"
+            f"https://min-api.cryptocompare.com/data/price?fsym={crypto.upper()}&tsyms={currency.upper()}"
         )
 
         r = r.json()
-        usd = r["USD"]
+        usd = r[currency.upper()]
         index = 1 / usd
-        amount = int(message)
-        converted = amount * index
-        em = discord.Embed(description=f"**${amount}** = **{converted} BTC**")
+        amounts = int(amount)
+        converted = amounts * index
+        em = discord.Embed(description=f"${amount} = {converted} BTC")
         em.set_author(
             name="Currency Conversion",
             icon_url="https://cdn.pixabay.com/photo/2013/12/08/12/12/bitcoin-225079_960_720.png",
         )
         await ctx.send(embed=em)
+
+        
+def setup(bot):
+    bot.add_cog(cryptoConvert(bot))
