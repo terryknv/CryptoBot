@@ -1,7 +1,7 @@
 import discord
 from discord.ext import commands
 import requests
-from CurrencySymbols import CurrencySymbols
+from cogs.CurrencySymbols import CurrencySymbols
 
 class CryptoConvert(commands.Cog):
     def __init__(self, client):
