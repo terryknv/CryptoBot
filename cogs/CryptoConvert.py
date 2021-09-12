@@ -12,7 +12,6 @@ class CryptoConvert(commands.Cog):
     async def convert(self, ctx, amount, currency, crypto):
 
         valid_curr = list(CurrencySymbols.curr_list.keys())
-        curr_symbol = CurrencySymbols.curr_list[currency.upper()]
         joiner = ', '
         is_valid = CurrencySymbols.is_valid_curr(currency.upper())
         ls = joiner.join(valid_curr)
@@ -24,6 +23,8 @@ class CryptoConvert(commands.Cog):
         r = requests.get(
             f"https://min-api.cryptocompare.com/data/price?fsym={crypto.upper()}&tsyms={currency.upper()}"
         )
+        
+        curr_symbol = CurrencySymbols.curr_list[currency.upper()]
         
         r = r.json()
         usd = r[currency.upper()]
