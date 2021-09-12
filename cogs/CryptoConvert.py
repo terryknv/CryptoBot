@@ -25,12 +25,13 @@ class CryptoConvert(commands.Cog):
         joiner = ', '
         valid_curr = list(CurrencySymbols.curr_list.keys())
         ls = joiner.join(valid_curr)
+        curr_symbol = CurrencySymbols.curr_list[currency.upper()]
         
         if is_valid == False:
             await ctx.send(f"Please convert from a currency from the valid list: {ls}")
             return
         
-        em = discord.Embed(colour = 0xf7931a, description=f"${amount} = {round(converted,10)} BTC")
+        em = discord.Embed(colour = 0xf7931a, description=f"{curr_symbol}{amount} = {round(converted,10)} BTC")
         em.set_footer(text="Prices from Cryptocompare.com")
         em.set_author(
             name="Currency Conversion",
