@@ -1,0 +1,10 @@
+class CurrencySymbols:
+    USD = "$"
+    EUR = "€"
+    GBP = "£"
+    INR = "₹"
+    AUD = "$"
+    CAD = "$"
+    SGD = "$"
+    JPY = "¥"
+    CNY = "¥"
