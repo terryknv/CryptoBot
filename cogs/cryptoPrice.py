@@ -84,8 +84,8 @@ class cryptoPrice(commands.Cog):
         )
         await ctx.send(embed=em)
 
-    @commands.command(aliases=["cryptocurrency"])
-    async def crypto(self, ctx, crypto):
+    @commands.command(aliases=["crypto"])
+    async def price(self, ctx, crypto):
       
         r = requests.get(
             f"https://min-api.cryptocompare.com/data/price?fsym={crypto.upper()}&tsyms=USD,EUR,GBP"
@@ -96,12 +96,11 @@ class cryptoPrice(commands.Cog):
         gbp = r["GBP"]
                 
         em = discord.Embed(
-            colour=0xf7931a,
+            colour=0x0df20d,
             description=f"USD: `${round(usd)}`\n\nEUR: `€{round(eur)}`\n\nGBP: `£{round(gbp)}`"
         )
         em.set_author(
             name=f"Price of {crypto.upper()}",
-            icon_url="https://cdn.pixabay.com/photo/2013/12/08/12/12/bitcoin-225079_960_720.png",
         )
         await ctx.send(embed=em)
 
