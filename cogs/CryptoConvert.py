@@ -12,6 +12,7 @@ class CryptoConvert(commands.Cog):
     async def convert(self, ctx, amount, currency, crypto):
 
         is_valid = CurrencySymbols.is_valid_curr(currency.upper())
+        ls = joiner.join(valid_curr)
         
         if is_valid == False:
             await ctx.send(f"Please convert from a currency from the valid list: {ls}")
@@ -29,7 +30,6 @@ class CryptoConvert(commands.Cog):
         
         joiner = ', '
         valid_curr = list(CurrencySymbols.curr_list.keys())
-        ls = joiner.join(valid_curr)
         curr_symbol = CurrencySymbols.curr_list[currency.upper()]
         
         
