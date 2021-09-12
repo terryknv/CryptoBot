@@ -10,3 +10,5 @@ class CurrencySymbols:
         'JPY': '¥',
         'CNY': '¥'
         }
+
+#CurrencySymbols.curr_list['USD']
