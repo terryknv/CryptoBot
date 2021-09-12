@@ -17,7 +17,9 @@ class cryptoPrice(commands.Cog):
         eur = r["EUR"]
         gbp = r["GBP"]
         
-        1,2,3,4,5=str(round(usd))
+        usd_rounded = str(round(usd))
+        
+        1,2,3,4,5=usd_rounded
         
         em = discord.Embed(
             colour=0xf7931a,
