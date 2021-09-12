@@ -13,5 +13,5 @@ class Help(commands.Cog):
         em.add_field(name="Convert Command", value=">convert <amount> <currency> <crypto> converts a currency to a crypto or another currency")
         await ctx.send(em=embed)
 
-def setup(bot):
-    bot.add_cog(Help(bot))
+def setup(client):
+    client.add_cog(Help(client))
