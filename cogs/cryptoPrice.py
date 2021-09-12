@@ -55,7 +55,7 @@ class cryptoPrice(commands.Cog):
         
         em = discord.Embed(
             colour=0x716b94,
-            description=f"USD: `${one}{two},{three}{four}`\n\nEUR: `€{one1}{two1},{three1}{four1}`\n\nGBP: `£{one2}{two2},{three2}{four2}`"
+            description=f"USD: `${one},{two}{three}{four}`\n\nEUR: `€{one1},{two1}{three1}{four1}`\n\nGBP: `£{one2},{two2}{three2}{four2}`"
         )
         em.set_author(
             name="Ethereum",
