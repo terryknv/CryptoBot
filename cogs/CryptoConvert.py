@@ -27,7 +27,7 @@ class CryptoConvert(commands.Cog):
         ls = joiner.join(valid_curr)
         
         if is_valid == False:
-            await ctx.send(f"Please convert from a currency from the valid list: {list}")
+            await ctx.send(f"Please convert from a currency from the valid list: {ls}")
             return
         
         em = discord.Embed(colour = 0xf7931a, description=f"${amount} = {round(converted,10)} BTC")
