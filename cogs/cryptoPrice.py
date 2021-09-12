@@ -84,6 +84,27 @@ class cryptoPrice(commands.Cog):
         )
         await ctx.send(embed=em)
 
+    @commands.command(aliases=["cryptocurrency"])
+    async def crypto(self, ctx, crypto):
+      
+        r = requests.get(
+            f"https://min-api.cryptocompare.com/data/price?fsym={crypto.upper()}&tsyms=USD,EUR,GBP"
+        )
+        r = r.json()
+        usd = r["USD"]
+        eur = r["EUR"]
+        gbp = r["GBP"]
+                
+        em = discord.Embed(
+            colour=0xf7931a,
+            description=f"USD: `${round(usd)}`\n\nEUR: `€{round(eur)}`\n\nGBP: `£{round(gbp)}`"
+        )
+        em.set_author(
+            name=f"Price of {crypto}",
+            icon_url="https://img.favpng.com/16/23/24/bitcoin-cash-cryptocurrency-logo-png-favpng-4PTyjd0fdRP22ddTr64P7aeqM.jpg",
+        )
+        await ctx.send(embed=em)
+
         
 def setup(bot):
     bot.add_cog(cryptoPrice(bot))
