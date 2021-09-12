@@ -18,12 +18,15 @@ class cryptoPrice(commands.Cog):
         gbp = r["GBP"]
         
         usd_rounded = str(round(usd))
-        
         one,two,three,four,five=usd_rounded
+        eur_rounded = str(round(eur))
+        one1,two1,three1,four1,five1=eur_rounded
+        gbp_rounded = str(round(gbp))
+        one2,two2,three2,four2,five2=gbp_rounded
         
         em = discord.Embed(
             colour=0xf7931a,
-            description=f"USD: `${str(round(usd))}`\n\nEUR: `€{str(round(eur))}`\n\nGBP: `£{str(round(gbp))}`\n\n\n{one},{two},{three},{four},{five}"
+            description=f"USD: `${one}{two},{three}{four}{five}`\n\nEUR: `€{one1}{two1},{three1}{four1}{five1}`\n\nGBP: `£{one2}{two2},{three2}{four2}{five2}`"
         )
         em.set_author(
             name="Bitcoin",
