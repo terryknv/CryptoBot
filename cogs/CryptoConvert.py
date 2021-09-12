@@ -32,7 +32,7 @@ class CryptoConvert(commands.Cog):
         amounts = int(amount)
         converted = amounts * index        
         
-        em = discord.Embed(colour = 0xf7931a, description=f"{curr_symbol}{amount} = {round(converted,10)} {currency.upper()}")
+        em = discord.Embed(colour = 0xf7931a, description=f"{curr_symbol}{amount} = {round(converted,10)} {crypto.upper()}")
         em.set_footer(text="Prices from Cryptocompare.com")
         em.set_author(
             name="Currency Conversion",
