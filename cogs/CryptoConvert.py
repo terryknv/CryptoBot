@@ -11,6 +11,9 @@ class CryptoConvert(commands.Cog):
     @commands.command()
     async def convert(self, ctx, amount, currency, crypto):
 
+        valid_curr = list(CurrencySymbols.curr_list.keys())
+        curr_symbol = CurrencySymbols.curr_list[currency.upper()]
+        joiner = ', '
         is_valid = CurrencySymbols.is_valid_curr(currency.upper())
         ls = joiner.join(valid_curr)
         
@@ -26,12 +29,7 @@ class CryptoConvert(commands.Cog):
         usd = r[currency.upper()]
         index = 1 / usd
         amounts = int(amount)
-        converted = amounts * index
-        
-        joiner = ', '
-        valid_curr = list(CurrencySymbols.curr_list.keys())
-        curr_symbol = CurrencySymbols.curr_list[currency.upper()]
-        
+        converted = amounts * index        
         
         em = discord.Embed(colour = 0xf7931a, description=f"{curr_symbol}{amount} = {round(converted,10)} BTC")
         em.set_footer(text="Prices from Cryptocompare.com")
