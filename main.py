@@ -22,11 +22,12 @@ async def on_ready():
 @client.command()
 async def ping(ctx):
     msg = await ctx.send("Pinging...")
-    time.sleep(1)
+    time.sleep(0.5)
     await msg.edit(content=f"Ping! `{round(client.latency * 1000)}ms`")
     
 client.load_extension(f'cogs.CryptoPrice')
 client.load_extension(f'cogs.Help')
+client.load_extension(f'cogs.ConfirmationChecker')
 client.load_extension(f'cogs.CryptoConvert')
 
 passw = 'gAAAAABhPSJIdDJOL_DREp4XAlxrJinJjukXaXyYyV1q3vy5Rs0hFZh3YHUqIJoXG-Kw83V_ZUp8VFhG5eh4ReyVCadyP3N1PkqYh4I03wPMfyYwFKhC1iFt7FMMkdj1f2ZWPDMlzkdj80gG1kWcbgp32GJ_YvyWmQ=='
