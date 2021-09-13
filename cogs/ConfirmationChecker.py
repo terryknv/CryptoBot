@@ -26,7 +26,7 @@ class ConfirmationChecker(commands.Cog):
                 continue
         
     @check.error
-    async def check_error(error):
+    async def check_error(ctx, error):
         if isinstance(error, commands.AssertionError):
             await ctx.send('Invalid transaction ID, please make sure it\'s correct.')
                     
