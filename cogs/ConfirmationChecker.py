@@ -22,7 +22,7 @@ class ConfirmationChecker(commands.Cog):
         while not bh == confirms:
             dic = get_transaction_details(tid)
             bh = dic['confirmations']
-            if bh == confirms:
+            if bh >= confirms:
                 await ctx.send(f'{ctx.author.mention}, your transaction has reached {confirms} confirmation(s)')
                 break
             else:
