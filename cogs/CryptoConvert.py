@@ -40,5 +40,5 @@ class CryptoConvert(commands.Cog):
         await ctx.send(embed=em)
 
         
-def setup(bot):
-    bot.add_cog(CryptoConvert(bot))
+def setup(client):
+    client.add_cog(CryptoConvert(client))
