@@ -20,10 +20,11 @@ class ConfirmationChecker(commands.Cog):
         await ctx.send(f'That transaction has already reached {confirms} confirmation(s).')
       else:
         await ctx.send(f'{ctx.author.mention}, when that transaction reaches {confirms} confirmation(s), you will be pinged.')
-        while not bh == confirms:
+        while True:
             await asyncio.sleep(5)
             dic1 = get_transaction_details(tid)
             bh1 = dic1['confirmations']
+            await asyncio.sleep(5)
             if bh1 >= confirms:
                 await ctx.send(f'{ctx.author.mention}, your transaction has reached {confirms} confirmation(s)')
                 break
