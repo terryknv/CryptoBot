@@ -112,5 +112,5 @@ class CryptoPrice(commands.Cog):
         await ctx.send(embed=em)
 
         
-def setup(bot):
-    bot.add_cog(CryptoPrice(bot))
+def setup(client):
+    client.add_cog(CryptoPrice(client))
