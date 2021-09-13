@@ -10,8 +10,11 @@ class ConfirmationChecker(commands.Cog):
     @commands.command()
     async def check(self, ctx, tid, confirms=1):
 
-      dic = get_transaction_details(tid)
-      bh = dic['confirmations']
+      try:
+        dic = get_transaction_details(tid)
+        bh = dic['confirmations']
+      except (AssertionError):
+        await ctx.send('Invalid transaction ID, please make sure it\'s correct.')
       if bh >= confirms:
         await ctx.send(f'That transaction has already reached {confirms} confirmation(s).')
       else:
@@ -24,12 +27,6 @@ class ConfirmationChecker(commands.Cog):
                 break
             else:
                 continue
-        
-    @check.error
-    async def check_error(ctx, error):
-        if isinstance(error, AssertionError):
-            await ctx.send('Invalid transaction ID, please make sure it\'s correct.')
-                    
-        
+                
 def setup(client):
     client.add_cog(ConfirmationChecker(client))
