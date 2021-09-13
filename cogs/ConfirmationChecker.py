@@ -2,6 +2,7 @@ import discord
 from discord.ext import commands
 import requests
 from blockcypher import get_transaction_details
+import asyncio
 
 class ConfirmationChecker(commands.Cog):
     def __init__(self, client):
@@ -20,6 +21,7 @@ class ConfirmationChecker(commands.Cog):
       else:
         await ctx.send(f'{ctx.author.mention}, when that transaction reaches {confirms} confirmation(s), you will be pinged.')
         while not bh == confirms:
+            await asyncio.sleep(5)
             dic = get_transaction_details(tid)
             bh = dic['confirmations']
             if bh >= confirms:
