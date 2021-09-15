@@ -10,7 +10,6 @@ class ConfirmationChecker(commands.Cog):
         
     @commands.command()
     async def check(self, ctx, tid, confirms=1):
-
       try:
         dic = get_transaction_details(tid)
         bh = dic['confirmations']
