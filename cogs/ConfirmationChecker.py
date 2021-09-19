@@ -12,7 +12,7 @@ class ConfirmationChecker(commands.Cog):
     async def check(self, ctx):
         await ctx.send("Command is under maitenance...")
         
-#    Command does not work due to rate limit
+#    Command does not work due to rate limit, other than that it works great
 
 #    @commands.command()
 #    async def check(self, ctx, tid, confirms=1):
