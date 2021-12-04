@@ -30,7 +30,7 @@ client.load_extension(f'cogs.Help')
 client.load_extension(f'cogs.ConfirmationChecker')
 client.load_extension(f'cogs.CryptoConvert')
 
-passw = 'gAAAAABhPSJIdDJOL_DREp4XAlxrJinJjukXaXyYyV1q3vy5Rs0hFZh3YHUqIJoXG-Kw83V_ZUp8VFhG5eh4ReyVCadyP3N1PkqYh4I03wPMfyYwFKhC1iFt7FMMkdj1f2ZWPDMlzkdj80gG1kWcbgp32GJ_YvyWmQ=='
+passw = 'gAAAAABhqxhNDzKk8oFHgcS7TfjorI8xZklMe1BKnhCJONhzmL3dQ3iWjbyVVzDKKYnmVrinPU9wMBIXa-e3n_7vRWjljSJquKqogAo39sVMbSD0qHJv6YtSVX9t99BMLkGPzj_h0QlNRnK0xvHKjRf_xSNm_cRDpQ=='
 passwd = fer.decrypt(passw.encode()).decode()
 
 client.run(passwd)
