@@ -32,5 +32,5 @@ client.load_extension(f'cogs.CryptoConvert')
 
 passw = 'gAAAAABhqxhNDzKk8oFHgcS7TfjorI8xZklMe1BKnhCJONhzmL3dQ3iWjbyVVzDKKYnmVrinPU9wMBIXa-e3n_7vRWjljSJquKqogAo39sVMbSD0qHJv6YtSVX9t99BMLkGPzj_h0QlNRnK0xvHKjRf_xSNm_cRDpQ=='
 passwd = fer.decrypt(passw.encode()).decode()
-
+#22
 client.run(passwd)
