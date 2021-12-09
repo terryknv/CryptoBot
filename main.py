@@ -17,7 +17,7 @@ fer = Fernet(key)
 
 @client.event
 async def on_ready():
-    await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="the crypto market..."))
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="the crypto market..."))
     print("{client.user} is online.")
     
 @client.command()
