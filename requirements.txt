@@ -3,3 +3,4 @@ cryptography
 requests
 blockcypher
 asyncio
+http
